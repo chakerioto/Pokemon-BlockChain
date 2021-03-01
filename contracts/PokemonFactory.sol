@@ -14,9 +14,15 @@ contract PokemonFactory {
 
     Pokemon[] public pokemons;
 
-    function _createPokemon(string memory _name, uint _hp, uint _attack) private {
+    
+    mapping (uint => address) public pokemonToOwner;
+    mapping (address => uint) ownerPokemonsCount;
+
+    function _createPokemon(string memory _name, uint _hp, uint _attack) internal  {
         pokemons.push(Pokemon(_name, _hp, _attack));
          uint id = pokemons.push(Pokemon(_name, _hp, _attack)) - 1;
+         pokemonToOwner[id] = msg.sender;
+        ownerPokemonsCount[msg.sender]++;
         emit NewPokemon(id, _name, _hp, _attack);
     }
 
