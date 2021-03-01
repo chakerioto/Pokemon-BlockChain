@@ -21,7 +21,7 @@ contract PokemonFactory {
     mapping (uint => address) public pokemonToOwner;
     mapping (address => uint) ownerPokemonsCount;
 
-    function _createPokemon(string memory _name, uint _hp, uint _attack , string memory _imgUrl) internal  {
+    function _createPokemon(string memory _name, uint _hp, uint _attack , string memory _imgUrl) public  {
         pokemons.push(Pokemon(_name, _hp, _attack , _imgUrl));
         uint id = pokemons.push(Pokemon(_name, _hp, _attack, _imgUrl)) - 1;
         pokemonToOwner[id] = msg.sender;
@@ -29,7 +29,11 @@ contract PokemonFactory {
         emit NewPokemon(id, _name, _hp, _attack ,_imgUrl);
     }
 
-   
+ function getPokemonsByOwner(address _owner) external view returns(uint[] memory) {
+    uint[] memory result = new uint[](ownerPokemonsCount[_owner]);
+    // Start here
+    return result;
+  }
 
 
 }
