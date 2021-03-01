@@ -3,7 +3,7 @@ import SimpleStorageContract from './contracts/SimpleStorage.json';
 import getWeb3 from './getWeb3';
 
 import './App.css';
-import Pokemon from './components/Pokemon';
+// import Pokemon from './components/Pokemon';
 import Menu from './components/Menu';
 import MyDeck from './components/MyDeck';
 
@@ -58,7 +58,7 @@ class App extends Component {
     return (
       <div className="App">
         <Menu />
-        <Pokemon />
+        {/* <Pokemon /> */}
         <MyDeck />
       </div>
     );
