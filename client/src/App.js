@@ -36,7 +36,7 @@ class App extends Component {
 
       const instance = new web3.eth.Contract(
         PokemonFactoryContract.abi,
-        PokemonFactoryContract.address
+        '0x58bbad79488b69c19cacb50d3a8173c473edad8a'
       );
       console.log(instance);
       // Set web3, accounts, and contract to the state, and then proceed with an
@@ -86,7 +86,7 @@ class App extends Component {
       <div className="App">
         <Menu setState={this.setState} state={this.state} />
         {/* <Pokemon /> */}
-        <MyDeck />
+        <MyDeck state={this.state} />
       </div>
     );
   }

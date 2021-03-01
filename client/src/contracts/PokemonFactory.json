@@ -3357,9 +3357,55 @@
     "name": "solc",
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {
+        "0x256aa9216621c83023b4dee83e0f11f51f5c6f75fbbf9ab6209d0c89a137b1d9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "_name",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_hp",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_attack",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "_imgUrl",
+              "type": "string"
+            }
+          ],
+          "name": "NewPokemon",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x58bbaD79488b69c19CacB50D3a8173c473EDAD8a",
+      "transactionHash": "0x0c7171357672d7d48468d3ffccd94baee433ec4cc0eb73626840c8fdd1032e07"
+    }
+  },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-01T09:50:56.076Z",
+  "updatedAt": "2021-03-01T10:27:43.929Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

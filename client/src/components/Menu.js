@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import PokemonList from './PokemonList';
 
 function Menu({ setState, state }) {
   const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
@@ -8,7 +9,6 @@ function Menu({ setState, state }) {
     'Attack',
     'Market Place',
   ]);
-  const [currentPokemon, setCurrentPokemon] = useState({});
 
   const handleClick = async (el, state) => {
     switch (el) {
@@ -27,6 +27,7 @@ function Menu({ setState, state }) {
           .getPokemonsByOwner(state.accounts[0])
           .call();
         console.log(response1);
+        setState({ ...state, PokeList: [...response1] });
         // Luu vao database pokemon
         // get pokemon ra set Pokemon list o app.js
         // va hien no ra o MyPokemonList
