@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import SimpleStorageContract from './contracts/SimpleStorage.json';
 import getWeb3 from './getWeb3';
 
@@ -8,7 +8,13 @@ import Menu from './components/Menu';
 import MyDeck from './components/MyDeck';
 
 class App extends Component {
-  // state = { storageValue: 0, web3: null, accounts: null, contract: null };
+  state = {
+    storageValue: 0,
+    web3: null,
+    accounts: null,
+    contract: null,
+    PokeList: [],
+  };
 
   // componentDidMount = async () => {
   //   try {
